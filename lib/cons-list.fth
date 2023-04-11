@@ -47,3 +47,11 @@
     over cdr swap cdr!
   then r> ( cons.node cons.list1 )
 ;
+
+: push-list ( x addr.list -- )
+  dup >r @ swap >cons r> !
+;
+: pop-list ( addr.list -- x )
+  dup >r @ dup if cons> swap r> ! exit then
+  drop rdrop true abort" Cannot pop from an empty list"
+;
