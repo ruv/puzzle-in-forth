@@ -10,6 +10,9 @@ require-word search-list-with ./cons-list.fth
 
 t{ 2 1 >cons  dup cdr swap dup car  swap cons> 2over d= ->  2 1 true }t
 
+t{ align here 2 1 >cons, tuck = swap cons@ -> true 2 1 }t
+
+
 t{ 0 [: 1 ;] visit-list-with -> }t
 
 t{  0  1 >cons 2 >cons 3 >cons  value c3 -> }t

@@ -21,6 +21,8 @@
 : >cons ( x2 x1 -- cons ) 2 cells allocate throw dup >r cons! r> ;
 : cons> ( cons -- x2 x1 ) dup >r cons@ r> free throw ;
 
+: >cons, ( x2 x1 -- cons ) align here 2 cells allot dup >r cons! r> ; \ NB: it cannot be destructed by "cons>"
+
 : car ( cons -- x1 ) @ ;
 : cdr ( cons -- x2 ) cell+ @ ;
 
