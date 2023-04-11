@@ -1,4 +1,8 @@
 
+[undefined] noop [if]
+  : noop ;
+[then]
+
 [undefined] -rot [if]
   : -rot  ( 3*x -- 3*x ) rot rot ;
 [then]
