@@ -36,11 +36,11 @@ variable pool-all   0  pool-all !
   >r :noname r> lit, postpone cons@ postpone execute postpone ;
 ;
 : build-pool-item ( -- addr.item )
-  0 0 ( xt.thunk  xt.free ) >cons
-  0 0 ( x.data    xt.run  ) >cons
+  0 0 ( xt.thunk  xt.free   ) >cons
+  0 0 ( x.param   xt.action ) >cons
   >cons dup >r car (build-thunk)  r@ cdr cdr!  r>
 ;
-: pool-item!* ( x.cata xt.run xt.free addr.item -- addr.item )
+: configure-pool-item* ( x.param xt.action xt.free  addr.item -- addr.item )
   dup >r  cdr car!  r@ car cons!  r>
 ;
 : build-pool-all ( -- )
@@ -54,7 +54,7 @@ variable pool-all   0  pool-all !
   dup if car true then
 ;
 : hire-thunk ( x.data xt.run xt.free -- xt.thunk ) \ xt.free ( x -- )
-  pool-idle pop-list pool-item!* cdr cdr
+  pool-idle pop-list configure-pool-item* cdr cdr
 ;
 : release-thunk ( xt.thunk -- )
   find-pool-item 0= abort" Supplied xt is not a thunk"

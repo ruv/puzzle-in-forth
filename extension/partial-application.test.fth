@@ -13,7 +13,7 @@ t{ 123 ' noop >cons (build-thunk) execute -> 123 }t
 
 t{ build-pool-item cons> swap cons> nip swap cons> -> 0 0 0 }t
 
-t{ 10 [: 20 ;] ' noop build-pool-item pool-item!* cdr cdr execute -> 10 20 }t
+t{ 10 [: 20 ;] ' noop build-pool-item configure-pool-item* cdr cdr execute -> 10 20 }t
 
 t{ here find-pool-item -> 0 }t
 
