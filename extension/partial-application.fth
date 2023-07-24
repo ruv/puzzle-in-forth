@@ -3,15 +3,15 @@
 
 \ PoC: Implementation of partial application in Standard Forth.
 \ The dictionary is not used at run-time.
-\ The produced xt can be release in any time (independently of other xt-s).
+\ The produced xt can be released in any time (independently of other xt-s).
 
 \ 1part ( x xt.full -- xt.part )
 \   xt.part identifies a part of xt.full execution semantics
-\   that is specialized by the top parameter x
+\   that are specialized by the top parameter x
 
 \ npart ( i*x u.i xt.full -- xt.part )
 \   xt.part identifies a part of xt.full execution semantics
-\   that is specialized by u.i top parameters represented by i*x
+\   that are specialized by u.i top parameters represented by i*x
 
 \ free-part ( xt.part --  )
 \   free the resources taken by xt.part

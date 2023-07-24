@@ -25,7 +25,7 @@
 ;
 
 : string>cmem ( c-addr1 u -- c-addr2 )
-  dup [ -1 pad ! pad c@ ]  literal u> abort" character string too long for a counted string"
+  dup [ -1 pad ! pad c@ ]  literal u> abort" A character string is too long for a counted string"
   dup char+ char+  allocate throw  dup >r ( c-addr1 u1 c-addr2 )
   2dup c!   char+  2dup + 0 swap c!  swap move  r>
 ;

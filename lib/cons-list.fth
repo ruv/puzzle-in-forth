@@ -4,8 +4,8 @@
 \ Lisp flavored cons pairs and lists
 \ See: https://en.wikipedia.org/wiki/Cons
 
-\ '>cons ( x2 x1 -- cons )' creates a cons pair in dynamic memory.
-\ 'cons> ( cons -- x2 x1 )' destructs the pair by shallow free its memory and return the content.
+\ >cons ( x2 x1 -- cons ) creates a cons pair in dynamic memory.
+\ cons> ( cons -- x2 x1 ) destructs the pair by shallow free its memory and return the content.
 \ The top value on the stack corresponds to the first cell of a pair (car).
 
 \ A list is represented by the head node, a node is a cons pair.
