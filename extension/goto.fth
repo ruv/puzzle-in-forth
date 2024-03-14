@@ -1,7 +1,7 @@
 \ 2023-03-11 ruv
 \ License: Apache License 2.0. https://www.apache.org/licenses/LICENSE-2.0
 
-\ Example of implementation GOTO in the standard Forth -- proof of concept (PoF)
+\ An example of implementation GOTO in the standard Forth -- proof of concept (PoC)
 \ See-also: https://groups.google.com/g/comp.lang.forth/c/zx3RBNWK5XI/m/FKBtxoy-AgAJ
 \
 \ Environmental dependencies:
